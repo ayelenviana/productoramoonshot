@@ -1,12 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300;600&family=Staatliches&display=swap");
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/*Pagina Inicio*/
 
 body {
   font-family: "Noto Sans Display", sans-serif;
@@ -14,39 +11,33 @@ body {
 }
 
 .navbar {
-  background-color: hsl(173, 100%, 7%);
+  background-color: hsl(173deg, 100%, 7%);
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   align-items: center;
 }
-
 .navbar .logo {
   width: 100px;
-  height: 85px;
-  grid-column: 1 / 2;
+  height: 90px;
+  grid-column: 1/2;
 }
-
 .navbar .menu {
-  grid-column: 6 / 8;
+  grid-column: 6/8;
   display: flex;
   justify-content: space-between;
 }
-
 .navbar .menu li {
   list-style: none;
 }
-
-.navbar .menu a {
+.navbar .menu li a {
   text-decoration: none;
   cursor: pointer;
   color: white;
 }
-
-.menu a:hover {
+.navbar .menu li a:hover {
   color: black;
 }
-
-.checkbtn {
+.navbar .checkbtn {
   color: white;
   font-size: 2rem;
 }
@@ -56,93 +47,12 @@ body {
   display: none;
 }
 
-/* Section Main Video*/
-
-.hero__video {
-  height: calc(100vh - 160px);
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  overflow: hidden;
-}
-
-.hero__video .text__into {
-  grid-column: 7 / 10;
-  grid-row: 3 / 7;
-  color: white;
-  position: relative;
-  z-index: 1;
-}
-
-.hero__video h3 {
-  font-size: 1.5em;
-  font-weight: 300;
-}
-
-.hero__video h1 {
-  font-size: 5em;
-  color: #224949;
-}
-
-.video {
-  grid-area: 1/1/9/11;
-  width: 100%;
-}
-
-.VideoIntro {
-  height: 100vh;
-  width: 100%;
-  object-fit: cover;
-  margin-top: -80px;
-}
-
-/*Section FOOTER */
-
-Footer {
-  background-color: hsl(173, 100%, 7%);
-  padding: 20px;
-}
-
-.Footer__title {
-  color: white;
-  list-style: none;
-  width: 500px;
-  text-align: flex-end;
-}
-
-.main__social {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-end;
-  gap: 10px;
-}
-
-.main__social .fa-brands {
-  color: white;
-  font-size: 1em;
-  width: 35px;
-} 
-
-.main__social .fa-solid {
-  color: white;
-  font-size: 1em;
-  width: 35px;
-}
-
-.text__into {
-  grid-column: 7 / 9;
-}
-
-/*Responsive mobile - INICIO - CABECERA*/
-
 @media (max-width: 846px) {
   .checkbtn {
     display: block;
     cursor: pointer;
-    grid-column: 8 / 9;
+    grid-column: 8/9;
   }
-
   .menu {
     background-color: #224949;
     position: fixed;
@@ -154,29 +64,56 @@ Footer {
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
-    clip-path: circle(0 at center);
+    -webkit-clip-path: circle(0 at center);
+            clip-path: circle(0 at center);
     padding: 20px 0;
     margin: 0;
     height: calc(100% - 60px);
     overflow-y: auto;
+    transition: -webkit-clip-path 1s ease-in-out;
     transition: clip-path 1s ease-in-out;
+    transition: clip-path 1s ease-in-out, -webkit-clip-path 1s ease-in-out;
   }
-
   .nav__input:checked + .menu {
-    clip-path: circle(100% at center);
+    -webkit-clip-path: circle(100% at center);
+            clip-path: circle(100% at center);
     background-color: #224949;
   }
-
   .menu a:hover,
-  .menu__link__active {
+.menu__link__active {
     background: none;
     color: black;
   }
 }
-
-/*Responsive mobile - FIN - CABECERA*/
-
-/*Seccion FORMULARIO*/
+Footer {
+  background-color: hsl(173deg, 100%, 7%);
+  padding: 20px;
+}
+Footer .Footer__title {
+  color: white;
+  list-style: none;
+  width: 500px;
+  text-align: flex-end;
+}
+Footer .main__social {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  gap: 10px;
+}
+Footer .main__social .fa-brands {
+  color: white;
+  font-size: 1em;
+  width: 35px;
+}
+Footer .main__social .fa-solid {
+  color: white;
+  font-size: 1em;
+  width: 35px;
+}
+Footer .text__into {
+  grid-column: 7/9;
+}
 
 .body__form {
   font-family: "Noto Sans Display", sans-serif;
@@ -192,8 +129,8 @@ Footer {
 
 .formulario {
   background-color: #224949;
-  grid-column: 4 / 8;
-  grid-row: 2 / 8;
+  grid-column: 4/8;
+  grid-row: 2/8;
   margin: auto;
   width: 100%;
   max-width: 400px;
@@ -202,24 +139,20 @@ Footer {
   box-shadow: 0 5px 10px -5px rgb(134, 170, 170);
   text-align: center;
 }
-
-.form__titulo {
+.formulario .form__titulo {
   font-size: 2rem;
   margin-bottom: 0.5em;
 }
-
-.form__container {
+.formulario .form__container {
   margin-top: 3em;
   display: grid;
   gap: 2.5em;
 }
-
-.form__group {
+.formulario .form__container .form__group {
   position: relative;
   --color: #5757577e;
 }
-
-.form__input {
+.formulario .form__container .form__group .form__input {
   width: 100%;
   background: none;
   color: #ffffff;
@@ -229,15 +162,7 @@ Footer {
   outline: none;
   border-bottom: 1px solid var(--color);
 }
-
-.form__input:focus + .form__label,
-.form__input:not(:placeholder-shown) + .form__label {
-  transform: translateY(-12px) scale(0.7);
-  transform-origin: left top;
-  color: rgb(5, 5, 5);
-}
-
-.form__label {
+.formulario .form__container .form__group .form__label {
   color: var(--color);
   cursor: pointer;
   position: absolute;
@@ -246,18 +171,7 @@ Footer {
   transform: translateY(10px);
   transition: transform 0.5s, color 0.3s;
 }
-
-.form__submit {
-  background: #ffffff;
-  color: #000000;
-  font-family: "Noto Sans Display", sans-serif;
-  font-family: "Staatliches", cursive;
-  padding: 0.8em 0;
-  border: none;
-  border-radius: 0.5em;
-}
-
-.form__line {
+.formulario .form__container .form__group .form__line {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -267,6 +181,42 @@ Footer {
   transform: scale(0);
   transform: left bottom;
   transition: 0.4s;
+}
+.formulario .form__container .form__submit {
+  background: #ffffff;
+  color: #000000;
+  font-family: "Noto Sans Display", sans-serif;
+  font-family: "Staatliches", cursive;
+  padding: 0.8em 0;
+  border: none;
+  border-radius: 0.5em;
+}
+
+.form__input:not(:-moz-placeholder-shown) + .form__label {
+  transform: translateY(-12px) scale(0.7);
+  transform-origin: left top;
+  color: rgb(5, 5, 5);
+}
+
+.form__input:not(:-ms-input-placeholder) + .form__label {
+  transform: translateY(-12px) scale(0.7);
+  transform-origin: left top;
+  color: rgb(5, 5, 5);
+}
+
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown) + .form__label {
+  transform: translateY(-12px) scale(0.7);
+  transform-origin: left top;
+  color: rgb(5, 5, 5);
+}
+
+.form__input:not(:-moz-placeholder-shown) ~ .form__line {
+  transform: scale(1);
+}
+
+.form__input:not(:-ms-input-placeholder) ~ .form__line {
+  transform: scale(1);
 }
 
 .form__input:focus ~ .form__line,
@@ -279,5 +229,37 @@ Footer {
   color: white;
 }
 
-
-/*Fin - Seccion FORMULARIO*/
+.hero__video {
+  height: calc(100vh - 160px);
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  overflow: hidden;
+}
+.hero__video .text__into {
+  grid-column: 7/10;
+  grid-row: 3/7;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+.hero__video .text__into h3 {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+.hero__video .text__into h1 {
+  font-size: 5em;
+  color: #224949;
+}
+.hero__video .video {
+  grid-area: 1/1/9/11;
+  width: 100%;
+}
+.hero__video .video .VideoIntro {
+  height: 100vh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: -80px;
+}/*# sourceMappingURL=styles.css.map */

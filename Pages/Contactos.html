@@ -16,7 +16,7 @@
   <!--Cabecera-->
   <header id="cabecera" class="grid__cabecera">
     <nav class="navbar">
-        <img src="../Multimedia/LOGO PAV4.png" class="logo" alt="logo Moonshot">
+        <img src="../Multimedia/LogoMoon.png" class="logo" alt="logo Moonshot">
         <label for="check" class="checkbtn">
             <i class="fa-solid fa-bars"></i>
         </label>
@@ -34,35 +34,30 @@
   </header>
 
   <!--Formulario-->
-
   <div class="body__form">
+    <section class="main">
+      <figure class="main_figure">
+        <img src="" class="main_img">
+      </figure>
+      
+      <div class="main_contact">
+        <h2 class="main_title"> Contactate</h2>
+        <p class="main_paragraph">Con nosotros</p>
 
-       <form class="formulario">
-           <h2 class="form__titulo">Contactate</h2>
-          <div class="form__container">
+        <form class="main_form">
+          <input type="text" placeholder="Nombre" class="main_input">
 
-              <div class="form__group">
-                <input type="text" id="name" class="form__input" placeholder=" ">
-                <label for="name" class="form__label">Nombre</label>
-                <span class="form__line"></span>
-              </div>
+          <input type="text" placeholder="Email" class="main_input">
 
-              <div class="form__group">
-                <input type="text" id="email" class="form__input" placeholder=" ">
-                <label for="name" class="form__label">Email</label>
-                <span class="form__line"></span>
-              </div>
+          <input type="text" placeholder="Comentario" class="main_input">
 
-              <div class="form__group">
-                 <input type="text" id="comment" class="form__input" placeholder=" ">
-                 <label for="name" class="form__label">Comentario</label>
-                 <span class="form__line"></span>
-              </div>
-               <input type="submit" class="form__submit" value="Enviar">
-
-          </div>
+          <input type="submit" value="Enviar" class="main_input main_input--send">
+          
         </form>
-    
+
+      </div>
+    </section>
+
   </div>
   <footer>
     <p class="Footer__title">© Moonshot Studio 2022</p>
